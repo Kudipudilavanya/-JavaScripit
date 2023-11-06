@@ -1,0 +1,98 @@
+JavaScript classes were introduced in ECMAScript 6 (ES6) and provide a more structured and convenient way to create and work with objects in JavaScript. Classes are essentially syntactical sugar over the existing prototype-based inheritance system. Here's an overview of JavaScript classes:
+
+Creating a Class:
+You can create a class using the class keyword. Classes can include constructors and methods.
+
+javascript
+Copy code
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+  }
+}
+Creating Objects (Instances):
+To create an instance of a class, you use the new keyword with the class constructor.
+
+javascript
+Copy code
+const person1 = new Person("John", "Doe");
+const person2 = new Person("Alice", "Smith");
+
+person1.sayHello(); // "Hello, my name is John Doe"
+person2.sayHello(); // "Hello, my name is Alice Smith"
+Constructor Method:
+The constructor is a special method called when an object is instantiated from a class. It's used to initialize object properties.
+
+Class Methods:
+You can define methods within a class that are shared among all instances of that class.
+
+Inheritance:
+Classes support inheritance through the extends keyword. A subclass can inherit properties and methods from a superclass.
+
+javascript
+Copy code
+class Student extends Person {
+  constructor(firstName, lastName, studentId) {
+    super(firstName, lastName); // Call the superclass constructor
+    this.studentId = studentId;
+  }
+
+  // Additional methods specific to Student
+  study() {
+    console.log(`${this.firstName} is studying.`);
+  }
+}
+
+const student = new Student("Bob", "Johnson", "12345");
+student.sayHello(); // "Hello, my name is Bob Johnson"
+student.study(); // "Bob is studying."
+Static Methods:
+Static methods are methods that are called on the class itself, rather than on instances of the class. They are defined using the static keyword.
+
+javascript
+Copy code
+class MathUtils {
+  static square(x) {
+    return x * x;
+  }
+}
+
+const result = MathUtils.square(5); // Call the static method
+console.log(result); // 25
+Getter and Setter Methods:
+Classes allow you to define getter and setter methods for controlling access to object properties.
+
+javascript
+Copy code
+class Rectangle {
+  constructor(width, height) {
+    this._width = width; // Private property
+    this._height = height; // Private property
+  }
+
+  get area() {
+    return this._width * this._height;
+  }
+
+  set width(newWidth) {
+    if (newWidth > 0) {
+      this._width = newWidth;
+    }
+  }
+}
+
+const rect = new Rectangle(5, 4);
+console.log(rect.area); // 20
+rect.width = 3; // Use the setter method
+console.log(rect.area); // 12
+
+JavaScript classes provide a cleaner and more organized way to create and manage objects and their behaviors, making code more readable and maintainable. They are widely used in modern JavaScript development for defining object-oriented structures.
+
+
+
+
