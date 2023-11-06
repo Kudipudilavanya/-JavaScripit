@@ -1,0 +1,73 @@
+JavaScript Objects:
+You have already learned that JavaScript variables are containers for data values.
+
+This code assigns a simple value (Fiat) to a variable named car:
+let car = "Fiat";
+Objects are variables too. But objects can contain many values.
+JavaScript objects are fundamental data structures that allow you to store and manipulate data. They are collections of key-value pairs, where each key is a string (or Symbol) and each value can be any data type, including other objects. Here's a sample program that demonstrates how to create and work with JavaScript objects:
+
+javascript
+Copy code
+// Creating an empty object
+let person = {};
+
+// Adding properties to the object
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 30;
+person.isStudent = false;
+
+// Accessing properties
+console.log("First Name: " + person.firstName);
+console.log("Last Name: " + person.lastName);
+console.log("Age: " + person.age);
+console.log("Is Student: " + person.isStudent);
+
+// You can also access properties using bracket notation
+console.log("First Name (Bracket Notation): " + person["firstName"]);
+
+// Modifying properties
+person.age = 35;
+
+// Deleting a property
+delete person.isStudent;
+
+// Checking if a property exists
+if ("age" in person) {
+  console.log("Age property exists");
+} else {
+  console.log("Age property does not exist");
+}
+
+// Iterating through the object's properties
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+
+// Nested objects
+person.address = {
+  street: "123 Main St",
+  city: "Exampleville",
+  zip: "12345"
+};
+
+console.log("Street: " + person.address.street);
+console.log("City: " + person.address.city);
+
+// Object as a key-value store
+let fruitPrices = {
+  apple: 0.99,
+  banana: 0.25,
+  orange: 0.75
+};
+
+console.log("Price of an apple: $" + fruitPrices.apple);
+In this example, we create an object called person and add various properties to it.
+You can access, modify, delete, and iterate through the properties of the object.
+Additionally, you can have nested objects and use objects as key-value stores. 
+Objects are incredibly versatile and are used extensively in JavaScript for various purposes.
+
+
+
+
+
