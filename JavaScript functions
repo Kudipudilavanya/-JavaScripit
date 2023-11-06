@@ -1,0 +1,106 @@
+JavaScript functions are a fundamental part of the language, allowing you to define reusable blocks of code that can be executed when called. Functions can take parameters (input) and return values (output). Here's an overview of JavaScript functions:
+
+Defining a Function:
+You can define a JavaScript function using the function keyword. Functions can be named or anonymous.
+
+javascript
+Copy code
+// Named function
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+// Anonymous function assigned to a variable
+const add = function(a, b) {
+  return a + b;
+};
+Function Parameters:
+Functions can take parameters, which are values passed into the function when it's called. You can access these parameters within the function.
+
+javascript
+Copy code
+function multiply(a, b) {
+  return a * b;
+}
+
+const result = multiply(5, 3); // Calling the function
+console.log(result); // 15
+Function Return Values:
+Functions can return values using the return statement. The returned value can be assigned to a variable or used directly.
+
+javascript
+Copy code
+function add(a, b) {
+  return a + b;
+}
+
+const sum = add(4, 7);
+console.log(sum); // 11
+Anonymous Functions (Function Expressions):
+You can define functions without a name, creating anonymous functions. They are often used as callback functions.
+
+javascript
+Copy code
+const sayHello = function(name) {
+  console.log(`Hello, ${name}!`);
+};
+
+sayHello("Alice"); // "Hello, Alice!"
+Arrow Functions:
+Arrow functions provide a shorter syntax for writing functions. They're especially useful for simple, one-line functions.
+
+javascript
+Copy code
+const multiply = (a, b) => a * b;
+const square = x => x * x;
+
+console.log(multiply(3, 4)); // 12
+console.log(square(5)); // 25
+Higher-Order Functions:
+JavaScript functions can be passed as arguments to other functions and returned from other functions. These are called higher-order functions.
+
+javascript
+Copy code
+const numbers = [1, 2, 3, 4, 5];
+
+// Using a higher-order function to map and double each number
+const doubled = numbers.map(function (number) {
+  return number * 2;
+});
+console.log(doubled); // [2, 4, 6, 8, 10]
+Function Scope:
+Variables defined within a function have function scope, meaning they are only accessible within that function.
+
+Closures:
+JavaScript functions can form closures, which allow inner functions to access the outer function's variables even after the outer function has finished executing.
+
+javascript
+Copy code
+function outer() {
+  let counter = 0;
+
+  function increment() {
+    counter++;
+    console.log(counter);
+  }
+
+  return increment;
+}
+
+const incrementCounter = outer();
+incrementCounter(); // 1
+incrementCounter(); // 2
+Recursive Functions:
+A function can call itself, creating a recursive function. Recursive functions are often used for solving problems that can be broken down into smaller, similar subproblems.
+
+javascript
+Copy code
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // 120
+JavaScript functions are versatile and are used for a wide range of tasks, from simple calculations to complex event handling and asynchronous operations in web development. Understanding functions is a key aspect of JavaScript programming.
